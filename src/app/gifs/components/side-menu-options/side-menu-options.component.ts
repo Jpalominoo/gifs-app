@@ -1,8 +1,39 @@
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
+
+  interface MenuOption {
+
+    icon: string;
+    label: string;
+    route: string;
+    subLabel: string;
+
+  }
 
 @Component({
   selector: 'gifs-side-menu-options',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './side-menu-options.component.html',
 })
-export class SideMenuOptionsComponent { }
+export class SideMenuOptionsComponent {
+  
+menuOptions: MenuOption[] = [
+  {
+    icon: 'fa-solid fa-chart-line',
+    label: 'Trending',
+    route: '/dashboard/trending',
+    subLabel: 'Popular Gifs'
+  },
+
+
+  {
+    icon: 'fa-solid fa-magnifying-glass',
+    label: 'Browser',
+    route: '/dashboard/search',
+    subLabel: 'Browse Gifs'
+  }
+];
+
+
+}
