@@ -5,6 +5,7 @@ export interface Giphy {
 }
 
 export interface GiphyResponse {
+    data: GiphyResponse[];
     type:                       Type;
     id:                         string;
     url:                        string;
